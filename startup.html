@@ -5,12 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<!--Adding a react component -->
+<div id="first"></div>
 
 
 
 
 
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+
+
+<!-- Load React. The first two scripts load react, the third one loads your components-->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+<!-- Load our React component. -->
+<script src="like_button.js"></script>
 </body>
 </html>
