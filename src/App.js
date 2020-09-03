@@ -1,21 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Person from './Person/Person';
 
+//requires a render method and return JSX
+//also must be exported
+//can call other components multiple times
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    //reserved word for special properties
+    //if it changes, it will update the dom
+    state = {
+        persons: [
+            {name: "Max" , age: 27},
+            {name: "Man" , age: 29},
+            {name: "Mad" , age: 22},
+        ]
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <h1>Hi, I'm a react app</h1>
+                <p>This is really working</p>
+                <button>Switch Name</button>
+                <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+                <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+                <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+            </div>
+        );
+
+        //This is an alternative way to do a return method, but not the recommended
+        // return React.createElement("div" , {className: "App"} , React.createElement("h1","null" ,"Does this work now"));
+    }
 }
 
 export default App;
