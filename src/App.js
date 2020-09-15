@@ -12,9 +12,9 @@ class App extends Component {
     //if it changes, it will update the dom
     state = {
         persons: [
-            {name: "Max" , age: 27},
-            {name: "Man" , age: 29},
-            {name: "Mad" , age: 22},
+            {name: "Max", age: 27},
+            {name: "Man", age: 29},
+            {name: "Mad", age: 22},
         ],
         otherState: 'some other value'
     };
@@ -22,30 +22,25 @@ class App extends Component {
 
 //hooks method
 
-/*const app = props => {
-    state = {
-        persons: [
-            {name: "Max", age: 27},
-            {name: "Man", age: 29},
-            {name: "Mad", age: 22},
-        ],
-        otherState: 'some other value'
-    }
-};*/
-
-
-
-
-
-
+    /*const app = props => {
+        state = {
+            persons: [
+                {name: "Max", age: 27},
+                {name: "Man", age: 29},
+                {name: "Mad", age: 22},
+            ],
+            otherState: 'some other value'
+        }
+    };*/
 
 
     switchNameHandler = () => {
         // console.log("was clicked");
-        this.setState({persons: [
-                {name: "Maxie" , age: 27},
-                {name: "Manie" , age: 29},
-                {name: "Madie" , age: 22},
+        this.setState({
+            persons: [
+                {name: "Maxie", age: 27},
+                {name: "Manie", age: 29},
+                {name: "Madie", age: 22},
             ]
         })
     }
@@ -65,6 +60,20 @@ class App extends Component {
         //This is an alternative way to do a return method, but not the recommended
         // return React.createElement("div" , {className: "App"} , React.createElement("h1","null" ,"Does this work now"));
     }
+
+
+    /*The instructions are:
+
+    Create TWO new components: UserInput and UserOutput
+    UserInput should hold an input element, UserOutput two paragraphs
+    Output multiple UserOutput components in the App component (any paragraph texts of your choice)
+    Pass a username (of your choice) to UserOutput via props and display it there
+    Add state to the App component (=> the username) and pass the username to the UserOutput component
+    Add a method to manipulate the state (=> an event-handler method)
+    Pass the event-handler method reference to the UserInput component and bind it to the input-change event
+    Ensure that the new input entered by the user overwrites the old username passed to UserOutput
+    Add two-way-binding to your input (in UserInput) to also display the starting username
+    Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets*/
 }
 
 export default App;
