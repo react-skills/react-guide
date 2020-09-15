@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import Person from './Person/Person';
+import UserInput from './UserInput/UserInput';
+import UserOutput from "./UserOutput/UserOutput";
 
 //requires a render method and return JSX
 //also must be exported
@@ -11,27 +13,13 @@ class App extends Component {
     //reserved word for special properties
     //if it changes, it will update the dom
     state = {
-        persons: [
-            {name: "Max", age: 27},
-            {name: "Man", age: 29},
-            {name: "Mad", age: 22},
-        ],
-        otherState: 'some other value'
-    };
-
-
-//hooks method
-
-    /*const app = props => {
-        state = {
-            persons: [
-                {name: "Max", age: 27},
-                {name: "Man", age: 29},
-                {name: "Mad", age: 22},
-            ],
-            otherState: 'some other value'
+        persons: {
+            username: 'Toperman'
         }
-    };*/
+    };
+    usernameChangedHandler = (event) => {
+        this.setState({username: event.target.value})
+    }
 
 
     switchNameHandler = () => {
@@ -54,6 +42,9 @@ class App extends Component {
                 <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
                 <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
                 <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+                <UserInput/>
+                <UserOutput userName={this.state.username}/>
+                <UserOutput userName={this.state.username}/>
             </div>
         );
 
@@ -74,6 +65,8 @@ class App extends Component {
     Ensure that the new input entered by the user overwrites the old username passed to UserOutput
     Add two-way-binding to your input (in UserInput) to also display the starting username
     Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets*/
+
+
 }
 
 export default App;
